@@ -1,0 +1,5 @@
+certs-data/
+*.log
+.env
+*.env
+*.sublime-*
