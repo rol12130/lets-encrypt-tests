@@ -15,3 +15,14 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./www:/var/www/certbot
     entrypoint: /bin/sh
+
+  gitea:
+    image: gitea/gitea:latest
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    ports:
+      - "3000:3000"   # port web de Gitea
+    volumes:
+      - ./gitea/data:/data
